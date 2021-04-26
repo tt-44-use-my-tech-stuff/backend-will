@@ -5,7 +5,7 @@ exports.seed = function(knex){
 <<<<<<< HEAD
         { role_name: "renter"}
 =======
-        { role_name: "renteRRRRRRRRrRRRRRR"}
+        { role_name: "renteRRRRRRRRrRRRRRRrrr"}
 >>>>>>> cae057e8567757efe9b428c8d1f0c563da0c63ac
     ])
 }
