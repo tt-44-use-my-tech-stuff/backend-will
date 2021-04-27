@@ -1,13 +1,13 @@
-const db = require('../../data/dbConfig')
+const db = require('../data/db-config')
 
 //get all users with their id and username
 function find() {
-    return db("users").select("id", "username").orderBy("id");
+    return db("users").select("user_id", "username").orderBy("user_id");
   }
 
 //get user by filter
 function findBy(filter){
-    return db("users").where(filter).orderBy("id")
+    return db("users").where(filter).orderBy("user_id")
 }
 
 //get user by id
@@ -17,7 +17,7 @@ function findById(id) {
 
 //add user to db, return the user by id
 async function add(user) {
-    const [id] = await db("users").insert(user, "id");
+    const [id] = await db("users").insert(user, "user_id");
     return findById(id);
 }
 

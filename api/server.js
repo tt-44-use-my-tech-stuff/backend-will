@@ -12,7 +12,7 @@ server.use(helmet())
 server.use(cors())
 
 server.use('/api/users', usersRouter);
-// server.use('/api/jokes', restrict, ownersRouter); // only logged-in owners should have access!
+// server.use('/api/owners', restrict, ownersRouter); // only logged-in owners should have access!
 
 //api status check
 server.get('/', (req,res)=>{
