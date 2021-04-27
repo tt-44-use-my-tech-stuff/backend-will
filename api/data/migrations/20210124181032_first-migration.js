@@ -1,7 +1,7 @@
 exports.up = async (knex) => {
   await knex.schema
     .createTable("roles", (roles) =>{
-      roles.increments("role_id")
+      roles.increments("role_id").defaultTo(1)
       roles.string("role_name", 200).notNullable()
     })
     .createTable("categories", (categories) =>{
