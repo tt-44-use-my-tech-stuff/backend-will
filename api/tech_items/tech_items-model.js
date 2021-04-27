@@ -17,8 +17,8 @@ function findById(id) {
 
 //add tech_item to db, return the tech_item by id
 async function add(tech_item) {
-    const [id] = await db("tech_items").insert(tech_item, "tech_item_id");
-    return findById(id);
+    const [tech_item_id] = await db("tech_items").insert(tech_item, "tech_item_id");
+    return findById(tech_item_id);
 }
 
 module.exports = {

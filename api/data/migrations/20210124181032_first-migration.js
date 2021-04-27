@@ -11,11 +11,11 @@ exports.up = async (knex) => {
     .createTable('users', (users) => {
       users.increments('user_id')
       users.string('username', 200).notNullable().unique()
-      users.string('password', 200).notNullable()
+      users.string('password', 300).notNullable()
       users.timestamps(false, true)
       users.integer("role_id")
         .unsigned()
-        .notNullable()
+        .defaultTo(1)
         .references("role_id")
         .inTable("roles")
     })
