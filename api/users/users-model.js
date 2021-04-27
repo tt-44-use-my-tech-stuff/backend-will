@@ -2,7 +2,7 @@ const db = require('../data/db-config')
 
 //get all users with their id and username
 function find() {
-    return db("users").select("user_id", "username").orderBy("user_id");
+    return db("users").select("user_id", "username", "role_id").orderBy("user_id");
   }
 
 //get user by filter
