@@ -41,7 +41,7 @@ Requires:<br/>
 [GET] https://techstufflambda.herokuapp.com/api/rentals<br/>
 [POST] https://techstufflambda.herokuapp.com/api/rentals<br/>
 Requires:<br/>
-    rental_period,<br/>
-    renter_id,<br/>
-    owner_id,<br/>
-    tech_item_id
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    rental_period,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    renter_id,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    owner_id,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    tech_item_id
