@@ -6,17 +6,17 @@
 
 ## Register
 
-[POST] https://techstufflambda.herokuapp.com/auth/register
-Requires:
-    username,
-    password,
+[POST] https://techstufflambda.herokuapp.com/auth/register<br/>
+Requires:<br/>
+    username,<br/>
+    password,<br/>
     role_id (is optional, defaults to 1 or "Renter")
 
 ## Login
 
-[POST] https://techstufflambda.herokuapp.com/auth/login
-Requires:
-    username,
+[POST] https://techstufflambda.herokuapp.com/auth/login<br/>
+Requires:<br/>
+    username,<br/>
     password
 
 ## Users (requires login token)
@@ -25,23 +25,23 @@ Requires:
 
 ## Tech Items
 
-[GET] https://techstufflambda.herokuapp.com/api/techitems
-[POST] https://techstufflambda.herokuapp.com/api/techitems
-Requires: 
-    tech_item_title,
-    tech_item_description,
-    tech_item_price,
-    min_rental_period,
-    max_rental_period,
-    category_id,
+[GET] https://techstufflambda.herokuapp.com/api/rentals<br/>
+[POST] https://techstufflambda.herokuapp.com/api/techitems<br/>
+Requires:<br/>
+    tech_item_title,<br/>
+    tech_item_description,<br/>
+    tech_item_price,<br/>
+    min_rental_period,<br/>
+    max_rental_period,<br/>
+    category_id,<br/>
     owner_id
 
 ## Rentals
 
-[GET] https://techstufflambda.herokuapp.com/api/rentals
-[POST] https://techstufflambda.herokuapp.com/api/rentals
-Requires:
-    rental_period,
-    renter_id,
-    owner_id,
+[GET] https://techstufflambda.herokuapp.com/api/rentals<br/>
+[POST] https://techstufflambda.herokuapp.com/api/rentals<br/>
+Requires:<br/>
+    rental_period,<br/>
+    renter_id,<br/>
+    owner_id,<br/>
     tech_item_id
