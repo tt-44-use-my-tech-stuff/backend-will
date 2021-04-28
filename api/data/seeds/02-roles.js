@@ -1,7 +1,7 @@
 
 exports.seed =  function(knex){
     return knex('roles').insert([
-        { role_name: "owner"},
-        { role_name: "renter"}
+        { role_name: "Renter"},
+        { role_name: "Owner"}
     ])
 }

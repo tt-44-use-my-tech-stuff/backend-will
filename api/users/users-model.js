@@ -20,7 +20,6 @@ function findById(user_id) {
 
 //add user to db, return the user by id
 async function add(user) {
-  // db('users').insert(user, ['user_id', 'username', 'role_id']);
   const [ user_id ] = await db('users').insert(user, ['user_id']);
   return findById(user_id);
 }
