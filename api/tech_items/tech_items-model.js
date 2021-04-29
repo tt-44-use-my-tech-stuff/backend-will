@@ -21,26 +21,26 @@ function findBy(filter){
 }
 
 //get tech_item by id
-function findById(tech_item_id) {
-    return db("tech_items").where("tech_item_id", tech_item_id).first();
+function findById(id) {
+    return db("tech_items").where("tech_item_id", id).first();
   }
 
 //add tech_item to db, return the tech_item by id
 async function add(tech_item) {
-    const [tech_item_id] = await db("tech_items").insert(tech_item, ["tech_item_id"]);
+    const [tech_item_id] = await db("tech_items").insert(tech_item, "tech_item_id");
     return findById(tech_item_id);
 }
 
 
-async function update(tech_item_id, changes){
-    await db("tech_items").where("tech_item_id", tech_item_id).update(changes)
-    return findById(tech_item_id)
+async function update(id, changes){
+    await db("tech_items").where("tech_item_id", id).update(changes)
+    return findById(id)
 }
 
-async function remove(tech_item_id){
-    const deletedItem = await findById(tech_item_id)
+async function remove(id){
+    const deletedItem = await findById(id)
     await db("tech_items")
-        .where("tech_item_id", tech_item_id)
+        .where("tech_item_id", id)
         .del()
     return deletedItem;
 }
