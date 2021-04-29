@@ -34,4 +34,25 @@ router.post('/', (req,res)=>{
   }
 })
 
+router.put('/:id', (req,res)=>{
+  const changes = req.body
+  TechItems.update(req.params.id, changes)
+  .then(updatedItem =>{
+    res.status(201).json(updatedItem)
+  })
+  .catch(err =>{
+    res.status(401).json({message: "Cannot update item.", err: err, errMsg: err.message })
+  })
+})
+
+router.delete('/:id', (req,res)=>{
+  TechItems.remove(req.params.id)
+  .then(deletedItem =>{
+    res.status(201).json(deletedItem)
+  })
+  .catch(err =>{
+    res.status(401).json({message:"Cannot delete item.", err: err, errMsg: err.message })
+  })
+})
+
 module.exports = router;
