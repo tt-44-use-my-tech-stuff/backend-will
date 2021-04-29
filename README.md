@@ -41,6 +41,8 @@ Requires:<br/>
 ## Rentals
 
 [GET] https://techstufflambda.herokuapp.com/api/rentals<br/>
+[PUT] https://techstufflambda.herokuapp.com/api/rentals/:id<br/>
+[DELETE] https://techstufflambda.herokuapp.com/api/rentals/:id<br/>
 [POST] https://techstufflambda.herokuapp.com/api/rentals<br/>
 Requires:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    rental_period,<br/>

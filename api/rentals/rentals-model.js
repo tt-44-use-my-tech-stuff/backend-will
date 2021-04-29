@@ -19,7 +19,7 @@ function findBy(filter){
 
 //get rental by id
 function findById(rental_id) {
-    return db("rentals").where(rental_id, "rental_id").first();
+    return db("rentals").where("rental_id", rental_id).first();
   }
 
 //add rental to db, return the rental by id
@@ -28,9 +28,24 @@ async function add(rental) {
     return findById(rental_id);
 }
 
+async function update(rental_id, changes){
+    await db("rentals").where("rental_id", rental_id).update(changes)
+    return findById(rental_id)
+}
+
+async function remove(rental_id){
+    const deletedItem = await findById(rental_id)
+    await db("rentals")
+        .where("rental_id", rental_id)
+        .del()
+    return deletedItem;
+}
+
 module.exports = {
     find,
     findBy,
     findById,
-    add
+    add,
+    update,
+    remove
 }

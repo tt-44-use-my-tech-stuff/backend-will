@@ -6,8 +6,8 @@ router.get('/', (req,res)=>{
     .then(item =>{
       res.status(200).json(item)
     })
-    .catch(() =>{
-      res.status(404).json({message: "Could not find tech_items."})
+    .catch(err =>{
+      res.status(404).json({message:"Cannot find tech items.", err: err, errMsg: err.message })
     })
 })
 
@@ -28,8 +28,8 @@ router.post('/', (req,res)=>{
     .then(addedTechItem =>{
       res.status(201).json(addedTechItem);
     })
-    .catch(()=>{
-      res.status(401).json("Cannot add item")
+    .catch(err =>{
+      res.status(401).json({message:"Cannot add item.", err: err, errMsg: err.message })
     })
   }
 })

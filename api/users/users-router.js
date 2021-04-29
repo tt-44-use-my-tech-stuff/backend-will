@@ -7,8 +7,8 @@ router.get('/', restricted, (req,res)=>{
     .then(user =>{
       res.status(200).json(user)
     })
-    .catch(() =>{
-      res.status(404).json({message: "Could not find users."})
+    .catch(err =>{
+      res.status(404).json({message:"Cannot find users.", err: err, errMsg: err.message })
     })
 })
 

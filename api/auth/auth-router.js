@@ -15,8 +15,8 @@ router.post('/register', checkUserPass, (req, res) => {
   .then(addedUser =>{
     res.status(201).json(addedUser);
   })
-  .catch(() =>{
-    res.status(401).json("username taken")
+  .catch(err =>{
+    res.status(401).json({message:"Cannot add user. Username taken?", err: err, errMsg: err.message })
   });
 });
 
@@ -28,7 +28,7 @@ router.post('/login', checkUserPass, async (req, res, next) => {
       const token = makeToken(user); //make token for user
       res.status(200).json({message: `Welcome back, ${username}`, token}) //welcome and give token
     }else{
-      res.status(401).json("invalid credentials")
+      res.status(401).json("Invalid credentials.")
     }
   }catch(err){
     next(err)
