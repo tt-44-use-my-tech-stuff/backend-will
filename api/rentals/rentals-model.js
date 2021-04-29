@@ -24,12 +24,12 @@ function findById(rental_id) {
 
 //add rental to db, return the rental by id
 async function add(rental) {
-    const [rental_id] = await db("rentals").insert(rental, ["rental_id"]);
+    const [rental_id] = await db("rentals").insert(rental, "rental_id");
     return findById(rental_id);
 }
 
 async function update(rental_id, changes){
-    await db("rentals").where("rental_id", rental_id).update(changes)
+    await db("rentals").where(rental_id, "rental_id").update(changes)
     return findById(rental_id)
 }
 
