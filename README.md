@@ -26,6 +26,8 @@ Requires:<br/>
 ## Tech Items
 
 [GET] https://techstufflambda.herokuapp.com/api/techitems<br/>
+[PUT] https://techstufflambda.herokuapp.com/api/techitems/:id<br/>
+[DELETE] https://techstufflambda.herokuapp.com/api/techitems/:id<br/>
 [POST] https://techstufflambda.herokuapp.com/api/techitems<br/>
 Requires:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    tech_item_title,<br/>
