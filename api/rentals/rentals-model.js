@@ -19,7 +19,7 @@ function findBy(filter){
 
 //get rental by id
 function findById(rental_id) {
-    return db("rentals").where("rental_id", rental_id).first();
+    return db("rentals").where(rental_id, "rental_id").first();
   }
 
 //add rental to db, return the rental by id

@@ -25,8 +25,8 @@ router.post('/', (req,res)=>{
     .then(addedTechItem =>{
       res.status(201).json(addedTechItem);
     })
-    .catch(()=>{
-      res.status(401).json("Cannot add rental")
+    .catch(err =>{
+      res.status(401).json({message:"Cannot add rental.", err: err, errMsg: err.message })
     })
   }
 })
